@@ -1,10 +1,10 @@
 def f(x):
-    return 2 * x * x - 12 * x  # put your function here
+    return x * x + 6 * x + 13  # put your function here
 
 
-a = 0  # start (a_0)
-b = 10  # end (b_0)
-eps = 1  # epsilon (inaccuracy)
+a = -6  # start (a_0)
+b = 4  # end (b_0)
+eps = 0.5  # epsilon (inaccuracy)
 delta = 0.2  # (l) - find +-
 n = 100  # limit
 
@@ -13,7 +13,7 @@ def dichotomy(a, b, eps, delta, n):
     a_n = a
     b_n = b
     k = -1
-    while b_n - a_n > eps:
+    while b_n - a_n > eps or n<100:
         k += 1
         x_n = (a_n + b_n - delta) / 2.0
         y_n = (a_n + b_n + delta) / 2.0
