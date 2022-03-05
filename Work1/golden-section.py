@@ -1,10 +1,10 @@
 def f(x):
-    return (127/4) * x * x - (61/4) * x + 2  # put your function here
+    return x * x + 6 * x + 13  # put your function here
 
 
-a = 0  # start (a_0)
-b = 0.5  # end (b_0)
-l = 0.15  # (l) - find +-
+a = -6  # start (a_0)
+b = 4  # end (b_0)
+l = 0.2  # (l) - find +-
 n = 100  # limit
 
 
