@@ -1,23 +1,24 @@
 def f(x):
-    return 2 * x * x - 12 * x  # put your function here
+    return x * x + 6 * x + 13  # put your function here
 
 
 def fib(n):
-    if n in (1, 2):
+    if n in (0, 1):
         return 1
     return fib(n - 1) + fib(n - 2)
 
 
-a = 0  # start (a_0)
-b = 10  # end (b_0)
-l = 1  # (l) - find +-
-eps = 0.01
+a = -6  # start (a_0)
+b = 4  # end (b_0)
+l = 0.2  # (l) - find +-
+eps = 0.5
 
 
 def fibonacci(a, b, l, eps):
     n = 1
     while fib(n) <= abs(b - a)/l:
         n += 1
+
     a_n = a
     b_n = b
     y_n = a_n + (fib(n - 2) / fib(n)) * (b_n - a_n)
@@ -46,6 +47,10 @@ def fibonacci(a, b, l, eps):
         a_n = y_n
     print("\nAnswer:", (a_n + b_n) / 2)
     print("k =", k)
+    string = ""
+    for i in range(n):
+        string += str(fib(i)) + ", "
+    print(string)
 
 
 fibonacci(a, b, l, eps)
