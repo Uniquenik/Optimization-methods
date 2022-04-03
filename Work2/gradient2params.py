@@ -4,12 +4,12 @@ from sympy import symbols, diff, lambdify, solve
 
 
 def func():
-    return x**2 + 8 * y**2 - x*y + x
-    # return 2*x**2 + x*y + y**2
+    # return x**2 + 8 * y**2 - x*y + x
+    return 2*x**2 + x*y + y**2
 
 
-# x_0, y_0 = 0.5, 1
-x_0, y_0 = 1.5, 0.1
+x_0, y_0 = 0.5, 1
+# x_0, y_0 = 1.5, 0.1
 e_1 = 0.1
 e_2 = 0.15
 M = 10
@@ -36,7 +36,7 @@ while flag:
         diff_fx_k.append(i(x_k, y_k))
         module_diff_fx_k += diff_fx_k[-1] ** 2  # сразу считаем модуль для 4 шага
     print("3) f(x_k)'=", diff_fx_k)
-    print("4) Module f(x_k)'=", math.sqrt((module_diff_fx_k)), "and e_1 =", e_1)
+    print("4) Norm f(x_k)'=", math.sqrt((module_diff_fx_k)), "and e_1 =", e_1)
     if math.sqrt(module_diff_fx_k) < e_1 or k >= M:
         flag = False
         print("Complete!")
